@@ -1,0 +1,23 @@
+{
+    "name": "ask.me",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start-dev": "nodemon src/server.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/express": "^4.17.13",
+        "@types/node": "^18.0.0",
+        "@types/validator": "^13.7.3"
+    },
+    "dependencies": {
+        "express": "^4.18.1",
+        "nodemon": "^2.0.18",
+        "validator": "^13.7.0"
+    }
+}
