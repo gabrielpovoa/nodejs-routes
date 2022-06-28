@@ -2,11 +2,11 @@ import { Router, Response, Request } from "express";
 
 const router = Router();
 
-router.get('/', (res: Response, req: Request) => {
-    res.send('OLA MUNDO')
-})
+router.get('/', (req:Request, res:Response)=> {
+    res.render('home');
+});
 
-router.get('/contact', (res: Response, req: Request) => {
+router.get('/contact', (req: Request, res: Response) => {
     res.send('FORMULARIO DE CONTATO')
 })
 

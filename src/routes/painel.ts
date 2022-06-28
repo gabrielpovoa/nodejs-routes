@@ -2,11 +2,11 @@ import { Router, Response, Request } from "express";
 
 const router = Router();
 
-router.get('/', (res: Response, req: Request) => {
+router.get('/', (req: Request, res: Response) => {
     res.send('PAGINA HOME: PAINEL DE NOTICIA');
 });
 
-router.get('/news', (res: Response, req: Request) => {
+router.get('/news', (req: Request, res: Response) => {
     res.send('LISTA DE NOTCÍCIAS CADASTRADAS');
 });
 
