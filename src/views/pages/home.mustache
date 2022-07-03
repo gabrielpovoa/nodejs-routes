@@ -1,0 +1,27 @@
+{{>partials/header}}
+
+<h2>Welcome, {{ name }} {{ lastname }}</h2>
+
+{{#renderContent}}
+<hr />
+<p>You're seeing an allowed content</p>
+{{/renderContent}} {{^renderContent}}
+<p>Tranquilet jão?</p>
+{{/renderContent}}
+<hr />
+<h2>Rendering a normal list []</h2>
+<ul>
+    {{#sentenceOfTheDay}}
+    <li>{{.}}</li>
+    {{/sentenceOfTheDay}} {{^sentenceOfTheDay}}
+    <li>NADA A SER EXIBIDO HOJE</li>
+    {{/sentenceOfTheDay}}
+
+</ul>
+<hr />
+
+<h2>Shopping list [{}]</h2>
+<ul>
+    {{#shoppingList}} {{>partials/productItem}} {{/shoppingList}}
+</ul>
+{{>partials/footer}}

@@ -10,15 +10,15 @@ router.get('/', (req:Request, res:Response)=> {
         renderContent = true
     } 
 
-    res.render('home', {
+    res.render('pages/home', {
         name: 'waheed',
         lastname: 'sakir',
         renderContent,
         sentenceOfTheDay: [
-            "Pensei na noite Sonhei com a lua Quem eu entrei Foi o Exu Tranca Rua.",
-            "Era reluzente e muito elegante E quando gargalhava Tinha um poder deslumbrante Poder da lua.",
-            "Rei da encruzilhada Mora no cemitério A sua gargalhada Possui um mistério.",
-            "Pois é Tranca Rua Exu dono da Lua Salve, Salve, Salve Glorioso Tranca Rua",
+            // "Pensei na noite Sonhei com a lua Quem eu entrei Foi o Exu Tranca Rua.",
+            // "Era reluzente e muito elegante E quando gargalhava Tinha um poder deslumbrante Poder da lua.",
+            // "Rei da encruzilhada Mora no cemitério A sua gargalhada Possui um mistério.",
+            // "Pois é Tranca Rua Exu dono da Lua Salve, Salve, Salve Glorioso Tranca Rua",
         ],
         shoppingList: [
             {product: 'MAÇA', price: 2.00},
@@ -29,8 +29,12 @@ router.get('/', (req:Request, res:Response)=> {
     });
 });
 
-router.get('/contact', (req: Request, res: Response) => {
-    res.send('FORMULARIO DE CONTATO')
+router.get('/contato', (req: Request, res: Response) => {
+    res.render('pages/contato')
+})
+
+router.get('/sobre', (req: Request, res: Response) => {
+    res.render('pages/sobre')
 })
 
 // EXEMPLOS DE ROTAS DINÂMICAS: SITE DE NOTÍCIAS E VOOS
