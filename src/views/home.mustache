@@ -2,18 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>home page</title>
 </head>
 
 <body>
     <hr />
+    <h2>Welcome, {{ name }} {{ lastname }}</h2>
 
-    <h2>Welcome, {{name}} {{lastname}}</h2>
-    <p>are you still, {{age}} yo?</p>
+    {{#renderContent}}
+        <hr /> 
+        <p>You're seeing an allowed content</p>
+    {{/renderContent}}
     <hr />
+    <h2>Rendering a normal list []</h2>
+    <ul>
+        {{#sentenceOfTheDay}}
+        <li>{{.}}</li>
+        {{/sentenceOfTheDay}}
+    </ul>
+    <hr />
+    
+    <h2>Shopping list [{}]</h2>
+    <ul>
+        {{#shoppingList}}
+        <li>{{product}} - R$ {{price}}</li>
+        {{/shoppingList}}
+    </ul>
 
 </body>
 
