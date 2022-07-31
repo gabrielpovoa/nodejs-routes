@@ -2,13 +2,13 @@ import { Router, Response, Request } from "express";
 
 const router = Router();
 
-router.get('/', (req:Request, res:Response)=> {
+router.get('/', (req: Request, res: Response) => {
     let age: number = 20
     let renderContent: boolean = false
 
-    if(age > 50) {
+    if (age > 50) {
         renderContent = true
-    } 
+    }
 
     res.render('pages/home', {
         name: 'waheed',
@@ -21,10 +21,10 @@ router.get('/', (req:Request, res:Response)=> {
             // "Pois é Tranca Rua Exu dono da Lua Salve, Salve, Salve Glorioso Tranca Rua",
         ],
         shoppingList: [
-            {product: 'MAÇA', price: 2.00},
-            {product: 'BANANA', price: 1.99},
-            {product: 'BERGAMOTA', price: 0.8},
-            {product: 'MAMÃO', price: 34.6}
+            { product: 'MAÇA', price: 2.00 },
+            { product: 'BANANA', price: 1.99 },
+            { product: 'BERGAMOTA', price: 0.8 },
+            { product: 'MAMÃO', price: 34.6 }
         ]
     });
 });
@@ -43,5 +43,35 @@ router.get('/flights/:from-:to', (req: Request, res: Response) => {
     res.send(`Procurando Voos de: ${from.toUpperCase()} - ${to.toUpperCase()}`)
 });
 
+
+router.get('/nome', (req: Request, res: Response) => {
+    let nome: string = req.query.name as string
+    let age: string = req.query.age as string
+
+    res.render('pages/nome', {
+        nome,
+        age
+    })
+})
+
+router.get('/age', (req: Request, res: Response) => {
+    let showAge: boolean = false
+
+    let age: number = 0
+
+    if (req.query.ano) {
+        let birthydayYear: number = parseInt(req.query.ano as string)
+        let currentYear: number = new Date().getFullYear();
+        age = currentYear - birthydayYear;
+        showAge = true
+
+        console.log(req.query.ano)
+    }
+
+    res.render('pages/age', {
+        age,
+        showAge
+    })
+})
 
 export default router
