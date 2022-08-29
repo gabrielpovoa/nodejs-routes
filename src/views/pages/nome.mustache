@@ -10,9 +10,10 @@
 
 {{#nome}}
 <hr/> 
-
-<h3>Ola, {{nome}} tudo bem? você tem {{age}} anos.</h3>
-
+    <h3>Ola, {{nome}} tudo bem? 
+    {{#age}}
+        sua idade é {{age}} anos</h3>
+    {{/age}}
 {{/nome}} 
 
 {{>partials/footer}}

@@ -1,18 +1,12 @@
 import { Router, Response, Request } from "express";
+import { Home, New, NewSlug } from "../controllers/newController";
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-    res.send('PAGINA HOME: PAINEL DE NOTICIA');
-});
+router.get('/', Home);
 
-router.get('/news', (req: Request, res: Response) => {
-    res.send('LISTA DE NOTCÍCIAS CADASTRADAS');
-});
+router.get('/news', New);
 
-router.get('/news/:slug', (req: Request, res: Response) => {
-    let slug: string = req.params.slug;
-    res.send(`Noticia: ${slug}`);
-});
+router.get('/news/:slug', NewSlug);
 
 export default router

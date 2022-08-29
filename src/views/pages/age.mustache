@@ -1,14 +1,14 @@
 {{>partials/header}}
 <p>Qual ano você nasceu?</p>
 
-<form method="GET">
+<form method="POST" action="/age_result">
     <input type="number" name="ano" placeholder="what is your birthyday's year" />
     <br />
     <input type="submit" value="send" />
 </form>
 
 {{#showAge}}
-    Sua idade é {{age}} anos 
+    Sua idade é {{age}} anos
 {{/showAge}}
 
 {{>partials/footer}}

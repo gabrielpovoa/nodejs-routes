@@ -16,7 +16,6 @@
     {{/sentenceOfTheDay}} {{^sentenceOfTheDay}}
     <li>NADA A SER EXIBIDO HOJE</li>
     {{/sentenceOfTheDay}}
-
 </ul>
 <hr />
 
@@ -24,4 +23,11 @@
 <ul>
     {{#shoppingList}} {{>partials/productItem}} {{/shoppingList}}
 </ul>
+<hr />
+
+<h2>Prices after $12 [{}]</h2>
+<ul>
+    {{#expensives}} {{>partials/productItem}} {{/expensives}}
+</ul>
+
 {{>partials/footer}}

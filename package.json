@@ -17,8 +17,9 @@
         "@types/validator": "^13.7.3"
     },
     "dependencies": {
-        "mustache-express": "^1.3.2",
+        "dotenv": "^16.0.1",
         "express": "^4.18.1",
+        "mustache-express": "^1.3.2",
         "nodemon": "^1.3.3",
         "validator": "^13.7.0"
     }
